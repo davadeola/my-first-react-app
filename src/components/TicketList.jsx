@@ -1,33 +1,17 @@
 import React from "react";
 import  Ticket from "./Ticket";
+import PropTypes from "prop-types";
+function TicketList(props){
 
-function TicketList(){
-  var masterTicketList = [
-    {
-      names: "Thato and Haley",
-      location: "3A",
-      issue: "Firebase won't save record. Halp."
-    },
-    {
-      names: "Sleater and Kinney",
-      location: "4B",
-      issue: "Fox image not displaying on page, can only see duck?"
-    },
-    {
-      names: "Imani & Jacob",
-      location: "9F",
-      issue: "Donkey picture not displaying on hover in Zoology app. :("
-    }
-  ];
   return(
     <div>
       <hr/>
-      {masterTicketList.map((ticket, index)=>
+      {props.ticketList.map((ticket)=>
         <Ticket
           names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
-          key={index}
+          key={ticket.id}
         />
       )}
     </div>
@@ -35,3 +19,7 @@ function TicketList(){
 }
 
 export default TicketList;
+
+TicketList.propTypes ={
+  ticketList: PropTypes.array
+};
