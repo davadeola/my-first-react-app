@@ -11,7 +11,7 @@ class NewTicketControl extends React.Component {
     this.handleTroubleShootingConfirmation = this.handleTroubleShootingConfirmation.bind(this);
   }
 
-  handleTroubleShootingConfirmation() {
+  handleTroubleShootingConfirmation() {//we don't define this function with 'function' because it is in a class not just a Component
     this.setState({formVisibleOnPage: true});
 
   }
