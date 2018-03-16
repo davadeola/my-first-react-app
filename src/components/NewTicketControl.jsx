@@ -1,17 +1,32 @@
 import React from "react";
+import NewTicketForm from "./NewTicketForm";
+import ConfirmationQuestions from "./ConfirmationQuestions";
 
 class NewTicketControl extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       formVisibleOnPage: false
     };
+    this.handleTroubleShootingConfirmation = this.handleTroubleShootingConfirmation.bind(this);
   }
 
-  render(){
-    return(
+  handleTroubleShootingConfirmation() {
+    this.setState({formVisibleOnPage: true});
+
+  }
+
+  render() {
+    let currentlyVisibleContent = null;
+    if (this.state.formVisibleOnPage) {
+      currentlyVisibleContent = <NewTicketForm/>;
+    } else {
+      currentlyVisibleContent = <ConfirmationQuestions onTroubleShootingConfirmation={this.handleTroubleShootingConfirmation}/>;
+    }
+
+    return (
       <div>
-        <p>This is the NewTicketControl component!</p>
+        {currentlyVisibleContent}
       </div>
     );
   }
