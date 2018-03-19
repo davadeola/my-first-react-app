@@ -1,14 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import TicketList from "./TicketList";
+import TicketDetail from "./TicketDetail";
 
 function Admin(props){
 
-  console.log(props.currentRoutePath);
+
   return(
     <div>
       <h2>Admin</h2>
       <TicketList ticketList={props.ticketList} currentRoutePath={props.currentRoutePath}/>
+      <TicketDetail/>
     </div>
   );
 }
