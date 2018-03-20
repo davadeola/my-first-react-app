@@ -3,23 +3,28 @@ import PropTypes from "prop-types";
 import TicketList from "./TicketList";
 import TicketDetail from "./TicketDetail";
 
-function Admin(props){
+function Admin(props) {
+  let optionalSelectedTicketContent = null;
+  if (props.selectedTicket != null) {
+    optionalSelectedTicketContent = <TicketDetail selectedTicket={props.ticketList[props.selectedTicket]}/>;
+  }
 
+  return (
 
-  return(
     <div>
       <h2>Admin</h2>
-      <TicketList ticketList={props.ticketList} currentRoutePath={props.currentRoutePath}/>
-      <TicketDetail/>
+      {optionalSelectedTicketContent}
+      <TicketList ticketList={props.ticketList} currentRoutePath={props.currentRoutePath} onTicketSelection={props.onTicketSelection}/>
+
     </div>
   );
 }
 
 export default Admin;
 
-Admin.propTypes ={
-  ticketList: PropTypes.array,
-  currentRoutePath: PropTypes.string.isRequired
-
-
+Admin.propTypes = {
+  ticketList: PropTypes.object,
+  currentRoutePath: PropTypes.string.isRequired,
+  onTicketSelection: PropTypes.func.isRequired,
+  selectedTicket: PropTypes.string
 };

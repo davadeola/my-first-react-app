@@ -1,11 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function TicketDetail(){
+function TicketDetail(props){
   return(
     <div>
-      <h2>Ticket Details will be visible here soon.</h2>
+      <hr/>
+      <h1>{props.selectedTicket.names} - {props.selectedTicket.location}</h1>
+      <h2>Submitted {props.selectedTicket.formattedWaitTime} ago</h2>
+      <h4><em>{props.selectedTicket.issue}</em></h4>
+      <hr/>
     </div>
   );
 }
 
 export default TicketDetail;
+
+TicketDetail.propTypes = {
+  selectedTicket: PropTypes.string
+};

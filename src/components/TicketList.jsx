@@ -1,28 +1,31 @@
 import React from "react";
-import  Ticket from "./Ticket";
+import Ticket from "./Ticket";
 import PropTypes from "prop-types";
-function TicketList(props){
+function TicketList(props) {
 
-  return(
+  return (
     <div>
-      <hr/>
-      {props.ticketList.map((ticket)=>
-        <Ticket
+      <hr/> {Object.keys(props.ticketList).map(function(ticketId) {
+        var ticket = props.ticketList[ticketId];
+        return <Ticket
           names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
           key={ticket.id}
           formattedWaitTime={ticket.formattedWaitTime}
           currentRoutePath={props.currentRoutePath}
-        />
-      )}
+          onTicketSelection={props.onTicketSelection}
+          ticketId={ticket.id}
+        />;
+      })}
     </div>
   );
 }
 
 export default TicketList;
 
-TicketList.propTypes ={
-  ticketList: PropTypes.array,
-  currentRoutePath: PropTypes.string
+TicketList.propTypes = {
+  ticketList: PropTypes.object,
+  currentRoutePath: PropTypes.string,
+  onTicketSelection: PropTypes.func
 };
