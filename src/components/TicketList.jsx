@@ -11,11 +11,11 @@ function TicketList(props) {
           names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
-          key={ticket.id}
+          key={ticketId}
           formattedWaitTime={ticket.formattedWaitTime}
           currentRoutePath={props.currentRoutePath}
           onTicketSelection={props.onTicketSelection}
-          ticketId={ticket.id}
+          ticketId={ticketId}
         />;
       })}
     </div>
