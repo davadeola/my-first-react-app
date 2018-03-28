@@ -1,9 +1,11 @@
+import ticketListReducer from "./../../src/reducers/ticket-list-reducer";
+
 /*eslint-disable*/
 
-describe("ticketlistReducer", ()=> {
+describe("ticketListReducer", ()=> {
   // body...
-  test("Temporary : two plus two equals four", ()=>{
-    expect(2+2).toBe(0);
+  test("Should return default state if no action type is defined ", ()=>{
+    expect(ticketListReducer({}, {type: null})).toEqual({});
   });
 });
 
