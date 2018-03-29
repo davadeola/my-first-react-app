@@ -6,6 +6,7 @@ import NewTicketControl from "./NewTicketControl";
 import Error404 from "./Error404";
 import Admin from "./Admin";
 //import Moment from "moment";
+import {connect} from "react-redux";
 
 class App extends React.Component {
   constructor(props) {
@@ -60,4 +61,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect()(App);
