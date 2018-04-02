@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest; exit 0",
     "start": "webpack-dev-server",
-    "lint": "eslint src/** src/**/**; exit 0",
+    "lint": "eslint src/** src/**/** _test_/** _test_/**/**; exit 0",
     "lint-fix": "eslint src/** src/**/** --fix; exit 0"
   },
   "author": "",

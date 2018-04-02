@@ -15,7 +15,7 @@ function NewTicketForm(props){
   function  handleNewTicketFormSubmission(event){
     const {dispatch} = props;
     event.preventDefault();
-    console.log(props);
+    
     const action = {
       type: "ADD_TICKET",
       id: v4(),
