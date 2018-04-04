@@ -3,6 +3,7 @@ export default(state = {}, action) => {
   case "SELECT_TICKET":
     return action.ticketId;
   default:
+    return state;
   }
-  return state;
+
 };
