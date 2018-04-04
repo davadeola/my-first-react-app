@@ -1,5 +1,5 @@
 import ticketListReducer from "./../../src/reducers/ticket-list-reducer";
-
+import Moment from "moment";
 /*eslint-disable*/
 
 describe("ticketListReducer", ()=> {
@@ -23,7 +23,8 @@ describe("ticketListReducer", ()=> {
       location: location,
       issue: issue,
       timeOpen: timeOpen,
-      id: id
+      id: id,
+      formattedWaitTime: new Moment().fromNow(true)
     }
 
     expect(ticketListReducer({}, action)).toEqual({
@@ -32,7 +33,8 @@ describe("ticketListReducer", ()=> {
         location: location,
         issue: issue,
         timeOpen: timeOpen,
-        id: id
+        id: id,
+        formattedWaitTime: "a few seconds"
       }
     })
   })

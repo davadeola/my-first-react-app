@@ -1,3 +1,5 @@
+
+
 export default(state = {}, action) => {
   let newState;
   const {names, location, issue, timeOpen, id, formattedWaitTime} = action;
@@ -11,7 +13,8 @@ export default(state = {}, action) => {
         location: location,
         issue: issue,
         timeOpen: timeOpen,
-        id: id
+        id: id,
+
       }
     });
     return newState;
