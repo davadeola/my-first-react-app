@@ -15,14 +15,15 @@ function NewTicketForm(props){
   function  handleNewTicketFormSubmission(event){
     const {dispatch} = props;
     event.preventDefault();
-    
+
     const action = {
       type: "ADD_TICKET",
       id: v4(),
       names: _names.value,
       location: _location.value,
       issue: _issue.value,
-      timeOpen: new Moment()
+      timeOpen: new Moment(),
+      formattedWaitTime: new Moment().fromNow(true)
     };
 
     dispatch(action);

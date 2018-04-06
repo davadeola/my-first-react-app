@@ -14,7 +14,7 @@ export default(state = {}, action) => {
         issue: issue,
         timeOpen: timeOpen,
         id: id,
-
+        formattedWaitTime:formattedWaitTime
       }
     });
     return newState;
